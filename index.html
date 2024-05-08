@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script
+      src="https://blizzard-api.arkoselabs.com/v2/api.js"
+      data-callback="setupEnforcement"
+      async
+      defer
+    ></script>
+    <link rel="shortcut icon" href="#" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <!-- <button id="enforcement-trigger">trigger element</button> -->
+
+    <script>
+      function setupEnforcement(myEnforcement) {
+        myEnforcement.setConfig({
+          publicKey: "E8A75615-1CBA-5DFF-8032-D16BCF234E10",
+          // selector: "#enforcement-trigger",
+          onCompleted: function (response) {
+            console.log(response.token);
+          },
+          onReady: function () {
+            myEnforcement.run();
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
